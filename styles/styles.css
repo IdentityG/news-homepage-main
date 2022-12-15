@@ -1,0 +1,266 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap');
+:root {
+  --soft-orange: hsl(35, 77%, 62%);
+  --soft-red: hsl(5, 85%, 63%);
+  --Off-white: hsl(36, 100%, 99%);
+  --Grayish-blue: hsl(233, 8%, 79%);
+  --Dark-grayish-blue: hsl(236, 13%, 42%);
+  --Very-dark-blue: hsl(240, 100%, 5%);
+}
+
+body {
+  padding: 0;
+  margin-left: 7rem;
+  margin-right: 7rem;
+  margin-top: 4rem;
+  list-style-type: none;
+  font-size: 15px;
+  font-family: 'Inter', sans-serif;
+  overflow-x: hidden;
+}
+a {
+  text-decoration: none;
+}
+
+/*Nav header css*/
+
+.nav-logo {
+  font-size: 4rem;
+  font-weight: bold;
+}
+
+.nav-logo a {
+  color: var(--Very-dark-blue);
+  text-decoration: none;
+}
+
+.mobile-nav-toggle {
+  display: none;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-list {
+  display: flex;
+  list-style: none;
+  align-items: center;
+  gap: 4rem;
+}
+.nav-list .icon {
+  display: none;
+}
+
+.nav-list li {
+  cursor: pointer;
+}
+
+.nav-list li a:hover {
+  color: var(--soft-red);
+}
+
+.nav-list li a:active {
+  color: var(--soft-red);
+}
+
+/*News section css*/
+
+.news-container {
+  background: transparent;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  height: 60vh;
+}
+
+.right > div img {
+  object-fit: contain;
+  width: 55vw;
+}
+
+.news-text {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 3rem;
+}
+
+.right-text h1 {
+  font-weight: bold;
+  font-size: 3rem;
+  margin-top: 10px;
+}
+.left-text p {
+  color: var(--Dark-grayish-blue);
+}
+
+.left-text button {
+  background: var(--soft-red);
+  border: none;
+  padding: 10px 25px 10px 25px;
+  margin-top: 25px;
+}
+
+.left-text button > span {
+  font-size: 16px;
+  color: var(--Off-white);
+}
+
+.left {
+  background: var(--Very-dark-blue);
+  height: 77vh;
+}
+
+.left h1 {
+  margin-left: 15px;
+  color: var(--soft-orange);
+}
+
+.left h3 {
+  margin-top: 15px;
+  margin-left: 15px;
+  color: var(--Off-white);
+}
+
+.left p {
+  margin-left: 15px;
+  color: var(--Dark-grayish-blue);
+}
+
+.left hr {
+  border: none;
+  height: 1px;
+  background-color: var(--Dark-grayish-blue);
+  margin: 25px 15px 25px 15px;
+}
+/*bottom section css*/
+.bottom {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3rem;
+  margin-top: 15rem;
+}
+
+.desc {
+  display: flex;
+  gap: 1rem;
+}
+
+.desc > div img {
+  width: 150px;
+  height: 150px;
+}
+
+.desc h1 {
+  color: var( --Grayish-blue)
+}
+
+.desc h3 {
+  font-weight: bold;
+}
+
+.desc h5 {
+  color: var( --Dark-grayish-blue)
+}
+
+/*footer*/
+.attribution {
+  font-size: 18px; 
+  text-align: center; 
+  margin-top: 3rem;
+}
+
+.attribution a { 
+  color: hsl(228, 45%, 44%); 
+}
+
+@media (min-width:320px) and (max-width:640px) {
+  body {
+    margin: 5px 5px 0px 5px;
+    padding: 0;
+  }
+  .nav-list {
+    position: fixed;
+    inset: -5% 0 -5% 30%;
+    background-color: white;
+    z-index: 1000;
+    flex-direction: column;
+    padding: min(30vh, 10rem) 2rem;
+
+    transform: translateX(100%);
+    transition: transform 350ms ease-out;
+  }
+
+  .nav-list[data-visible="true"] {
+    transform: translateX(0%);
+  }
+
+  .mobile-nav-toggle {
+    display: block;
+    position: absolute;
+    z-index: 9999;
+    background: url("../assets/images/menu.png");
+    background-repeat: no-repeat;
+    width: 2rem;
+    border: 0;
+    aspect-ratio: 1;
+    top: 2rem;
+    right: 2rem;
+  }
+
+  .mobile-nav-toggle[aria-expanded="true"] {
+    background-image: url("../assets/images/close.png");
+  }
+  .news-container {
+    grid-template-columns: 1fr;
+  }
+  .right > div img {
+    object-fit: contain;
+    width: 98vw;
+  }
+  .news-text {
+    grid-template-columns: 1fr;
+    gap: 0rem;
+  }
+  .right-text h1 {
+    font-weight: bold;
+    font-size: 2rem;
+  }
+  .left {
+    height: 47vh;
+  }
+  .bottom {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    margin-top: 24rem;
+  }
+  .attribution {
+    margin-top: 1rem;
+  }
+  
+}
+
+@media (min-width:641px) and (max-width:1024px) {  
+  body {
+    margin-left: 4rem;
+    margin-right: 4rem;
+    margin-top: 1rem;
+  }
+  .news-container {
+    grid-template-columns: 1fr;
+  }
+  .right > div img {
+    object-fit: contain;
+    width: 85vw;
+  }
+  .left {
+    height: 37vh;
+  }
+  .bottom {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    margin-top: 22rem; 
+  }
+}
