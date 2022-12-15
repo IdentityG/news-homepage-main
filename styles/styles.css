@@ -229,12 +229,12 @@ a {
     font-size: 2rem;
   }
   .left {
-    height: 47vh;
+    height: 60vh;
   }
   .bottom {
     grid-template-columns: 1fr;
     gap: 1rem;
-    margin-top: 24rem;
+    margin-top: 30rem;
   }
   .attribution {
     margin-top: 1rem;
